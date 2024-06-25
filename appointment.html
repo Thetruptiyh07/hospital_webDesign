@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Appointment Page</title>
+<link rel="stylesheet" href="styles9.css">
+</head>
+<body>
+  <h1>Make an Appointment</h1>
+  <form id="appointmentForm">
+    <label for="fullName">Full Name:</label>
+    <input type="text" id="fullName" name="fullName" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="doctor">Doctor:</label>
+    <select id="doctor" name="doctor" required>
+      <option value="Dr. John Doe">Dr. John Doe</option>
+      <option value="Dr. Jane Smith">Dr. Jane Smith</option>
+      <option value="Dr. Vineeta Singh">Dr. Vineeta Singh</option>
+      <option value="Dr. Dinesh Gupta">Dr. Dinesh Gupta</option>
+    </select>
+    <label for="date">Appointment Date:</label>
+    <input type="date" id="date" name="date" required>
+    <label for="time">Appointment Time:</label>
+    <input type="time" id="time" name="time" required>
+    <button type="submit" id="bookappointmentbtn">Book Appointment</button>
+  </form>
+
+  <script src="script5.js"></script>
+</body>
+</html>

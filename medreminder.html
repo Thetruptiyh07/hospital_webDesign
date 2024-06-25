@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Reminder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .medicine-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .medicine-list {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        .medicine-list li {
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .medicine-info {
+            display: none;
+        }
+        .reminder {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .reminder th, .reminder td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        .reminder th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Medicine Reminder</h1>
+    <div class="medicine-container">
+        <ul class="medicine-list">
+            <li onclick="showMedicineInfo('Paracetamol')">Paracetamol</li>
+            <li onclick="showMedicineInfo('Aspirin')">Aspirin</li>
+            <li onclick="showMedicineInfo('Amoxicillin')">Amoxicillin</li>
+            <li onclick="showMedicineInfo('Ibuprofen')">Ibuprofen</li>
+            <li onclick="showMedicineInfo('Ciprofloxacin')">Ciprofloxacin</li>
+            <li onclick="showMedicineInfo('Lisinopril')">Lisinopril</li>
+            <li onclick="showMedicineInfo('Metformin')">Metformin</li>
+        </ul>
+    </div>
+
+    <div class="medicine-info" id="medicineInfo">
+        <h2 id="medicineName"></h2>
+        <p><strong>Default Dosage:</strong> <span id="defaultDosage"></span></p>
+        <table class="reminder" id="reminderTable">
+            <tr>
+                <th>Time</th>
+                <th>Next Dose</th>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function showMedicineInfo(medicineName) {
+            var medicineInfo = {
+                'Paracetamol': { dosage: '500mg', schedule: ['Morning', 'Afternoon', 'Evening'] },
+                'Aspirin': { dosage: '75mg', schedule: ['Morning', 'Evening'] },
+                'Amoxicillin': { dosage: '250mg', schedule: ['Morning', 'Night'] },
+                'Ibuprofen': { dosage: '200mg', schedule: ['Morning', 'Afternoon', 'Night'] },
+                'Ciprofloxacin': { dosage: '500mg', schedule: ['Morning', 'Evening'] },
+                'Lisinopril': { dosage: '10mg', schedule: ['Morning'] },
+                'Metformin': { dosage: '500mg', schedule: ['Morning', 'Afternoon', 'Evening'] }
+            };
+
+            var medicine = medicineInfo[medicineName];
+            var medicineNameElement = document.getElementById('medicineName');
+            var defaultDosageElement = document.getElementById('defaultDosage');
+            var reminderTable = document.getElementById('reminderTable');
+            var reminderTableHTML = '';
+
+            medicineNameElement.textContent = medicineName;
+            defaultDosageElement.textContent = medicine.dosage;
+
+            
+            while (reminderTable.rows.length > 1) {
+                reminderTable.deleteRow(1);
+            }
+
+            
+            medicine.schedule.forEach(function(time) {
+                var nextDose = getNextDoseTime(time);
+                reminderTableHTML += `
+                    <tr>
+                        <td>${time}</td>
+                        <td>${nextDose}</td>
+                    </tr>
+                `;
+            });
+
+            reminderTable.innerHTML += reminderTableHTML;
+            document.getElementById('medicineInfo').style.display = 'block';
+        }
+
+        function getNextDoseTime(time) {
+            
+            var currentTime = new Date();
+            var nextDoseTime = new Date(currentTime);
+            nextDoseTime.setHours(0, 0, 0, 0); 
+            switch (time) {
+                case 'Morning':
+                    nextDoseTime.setHours(8); 
+                    break;
+                case 'Afternoon':
+                    nextDoseTime.setHours(12); 
+                    break;
+                case 'Evening':
+                    nextDoseTime.setHours(18); 
+                    break;
+                case 'Night':
+                    nextDoseTime.setHours(22); 
+                    break;
+                default:
+                    break;
+            }
+            
+            if (nextDoseTime < currentTime) {
+                nextDoseTime.setDate(nextDoseTime.getDate() + 1);
+            }
+        
+            return nextDoseTime.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+        }
+    </script>
+</body>
+</html>

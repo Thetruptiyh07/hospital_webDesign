@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" href="styles4.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-wrapper">
+            <div class="close-btn" id="closeBtn">X</div>
+            <form action="#" method="POST" id="patientForm">
+                <div class="form-section">
+                    <h2>Patient Details</h2>
+                    <div class="row">
+                        <div class="column">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="column">
+                            <label for="age">Age:</label>
+                            <input type="number" id="age" name="age" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <label for="gender">Gender:</label>
+                            <select id="gender" name="gender" required>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="column">
+                            <label for="blood-group">Blood Group:</label>
+                            <select id="blood-group" name="blood-group" required>
+                                <option value="">Select Blood Group</option>
+                                <option value="A+">A+ (A positive)</option>
+                                <option value="B+">B+ (B positive)</option>
+                                <option value="AB+">AB+ (AB positive)</option>
+                                <option value="O+">O+ (O positive)</option>
+                                <option value="A-">A- (A negative)</option>
+                                <option value="B-">B- (B negative)</option>
+                                <option value="AB-">AB- (AB negative)</option>
+                                <option value="O-">O- (O negative)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <label for="weight">Weight (in kg):</label>
+                            <input type="number" id="weight" name="weight" required>
+                        </div>
+                        <div class="column">
+                            <label for="phone">Phone Number:</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <label for="address">Address:</label>
+                            <textarea id="address" name="address" rows="4" required></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <label for="case-history">Case History:</label>
+                            <textarea id="case-history" name="case-history" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <label for="allergies">Allergies:</label>
+                            <textarea id="allergies" name="allergies" rows="4"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-section">
+                    <h2>Symptoms (Optional)</h2>
+                    <div class="symptoms-box">
+                        <h3>Select Symptoms:</h3>
+                        <div id="symptoms">
+                            
+                            <div class="row">
+                                <input type="checkbox" id="fever" name="symptom" value="fever">
+                                <label for="fever">Fever</label>
+                                <input type="checkbox" id="cough" name="symptom" value="cough">
+                                <label for="cough">Cough</label>
+                                <input type="checkbox" id="chest-pain" name="symptom" value="chest-pain">
+                                <label for="chest-pain">Chest Pain</label>
+                                <input type="checkbox" id="nausea" name="symptom" value="nausea">
+                                <label for="nausea">Nausea</label>
+                            </div>
+                            <div class="row">
+                                
+                                <input type="checkbox" id="headache" name="symptom" value="headache">
+                                <label for="headache">Headache</label>
+                                <input type="checkbox" id="fatigue" name="symptom" value="fatigue">
+                                <label for="fatigue">Fatigue</label>
+                                <input type="checkbox" id="abdominal-pain" name="symptom" value="abdominal-pain">
+                                <label for="abdominal-pain">Abdominal Pain</label>
+                                <input type="checkbox" id="dizziness" name="symptom" value="dizziness">
+                                <label for="dizziness">Dizziness</label>
+                            </div>
+                            <div class="row">
+                                <input type="checkbox" id="other-symptom" name="symptom" value="other">
+                                <label for="other-symptom">Other (Please specify)</label>
+                                <input type="text" id="other-symptom-text" name="other-symptom-text" placeholder="Specify other symptom">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+            <div id="submissionMessage" style="display:none;">Submission successful!</div>
+        </div>
+    </div>
+   
+
+    <script>
+        
+        document.getElementById('patientForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            window.location.href = '2nd_page.html'; 
+        });
+    
+
+        
+    </script>
+</body>
+</html>

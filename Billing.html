@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patient Billing Transactions with Service Reports</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+</style>
+</head>
+<body>
+
+<h2>Patient Billing Transactions with Service Reports</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Transaction ID</th>
+      <th>Service</th>
+      <th>Price (Rupees)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="3">2024-03-15</td>
+      <td rowspan="3">TRX001</td>
+      <td>X-Ray</td>
+      <td>₹10,500.00</td>
+    </tr>
+    <tr>
+      <td>Blood Test</td>
+      <td>₹5,600.00</td>
+    </tr>
+    <tr>
+      <td>Consultation</td>
+      <td>₹8,400.00</td>
+    </tr>
+    <tr>
+      <td rowspan="2">2024-03-16</td>
+      <td rowspan="2">TRX002</td>
+      <td>X-Ray</td>
+      <td>₹10,500.00</td>
+    </tr>
+    <tr>
+      <td>Ultrasound</td>
+      <td>₹14,000.00</td>
+    </tr>
+     <tr class="total">
+      <td colspan="3">Total</td>
+      <td>₹49,000.00</td>
+    </tr>
+    
+  </tbody>
+</table>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System Feedback</title>
+    <link rel="stylesheet" href="styles13.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Feedback Form</h1>
+        <form id="feedbackForm">
+            <label for="message">Your Feedback:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const feedbackForm = document.getElementById('feedbackForm');
+
+    feedbackForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const message = document.getElementById('message').value;
+
+        if (message.trim() !== '') {
+            
+            alert('Feedback submitted successfully!');
+            
+    
+            document.getElementById('message').value = '';
+        }
+    });
+});
+    </script>
+</body>
+</html>

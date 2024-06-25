@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Availability</title>
+    <link rel="stylesheet" href="styles7.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Availability</h1>
+        <div class="section">
+            <h2>Blood</h2>
+            <div class="box-container">
+                <div class="box">
+                    <h3>A+</h3>
+                    <p>Available amount: 10 units</p>
+                </div>
+                <div class="box">
+                    <h3>A-</h3>
+                    <p>Available amount: 5 units</p>
+                </div>
+                <div class="box">
+                    <h3>B+</h3>
+                    <p>Available amount: 8 units</p>
+                </div>
+                <div class="box">
+                    <h3>B-</h3>
+                    <p>Available amount: 7 units</p>
+                </div>
+                <div class="box">
+                    <h3>O+</h3>
+                    <p>Available amount: 12 units</p>
+                </div>
+                <div class="box">
+                    <h3>O-</h3>
+                    <p>Available amount: 3 units</p>
+                </div>
+                <div class="box">
+                    <h3>AB+</h3>
+                    <p>Available amount: 9 units</p>
+                </div>
+                <div class="box">
+                    <h3>AB-</h3>
+                    <p>Available amount: 4 units</p>
+                </div>
+                <button onclick="requestNow('blood')">Request Now</button>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Wards</h2>
+            <div class="box-container">
+                <div class="box">
+                    <h3>General</h3>
+                    <p>Available number: 20</p>
+                </div>
+                <div class="box">
+                    <h3>Personal</h3>
+                    <p>Available number: 10</p>
+                </div>
+                <div class="box">
+                    <h3>Maternity</h3>
+                    <p>Available number: 8</p>
+                </div>
+                <div class="box">
+                    <h3>Pediatrics</h3>
+                    <p>Available number: 12</p>
+                </div>
+                <div class="box">
+                    <h3>Cardiology</h3>
+                    <p>Available number: 15</p>
+                </div>
+                <button onclick="bookNow('wards')">Book Now</button>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Medicines</h2>
+            <div class="box-container">
+                <div class="box">
+                    <h3>Paracetamol</h3>
+                    <p>Available quantity: 100 tablets</p>
+                </div>
+                <div class="box">
+                    <h3>Aspirin</h3>
+                    <p>Available quantity: 50 tablets</p>
+                </div>
+                <div class="box">
+                    <h3>Amoxicillin</h3>
+                    <p>Available quantity: 30 capsules</p>
+                </div>
+                <div class="box">
+                    <h3>Ibuprofen</h3>
+                    <p>Available quantity: 75 tablets</p>
+                </div>
+                <div class="box">
+                    <h3>Ciprofloxacin</h3>
+                    <p>Available quantity: 20 tablets</p>
+                </div>
+                <div class="box">
+                    <h3>Lisinopril</h3>
+                    <p>Available quantity: 40 tablets</p>
+                </div>
+                <div class="box">
+                    <h3>Metformin</h3>
+                    <p>Available quantity: 60 tablets</p>
+                </div>
+                <button onclick="BuyNow('Medicines')">Buy Now</button>
+                <button id="remindmebtn">Remind me</button>
+        </div>
+        <div class="section">
+            <h2>ICU</h2>
+            <p>Available number of ICU beds: 5</p>
+        </div>
+        <div class="section">
+            <h2>Staff</h2>
+            <div class="box-container">
+                <div class="box">
+                    <h3>Male Staff</h3>
+                    <p>Available number: 15</p>
+                </div>
+                <button onclick="bookNow('staff')">Book Now</button>
+                <div class="box">
+                    <h3>Female Staff</h3>
+                    <p>Available number: 10</p>
+                </div>
+                <button onclick="bookNow('staff')">Book Now</button>
+            </div>
+        </div>
+    </div>
+    <script>
+       const remindmebtn = document.getElementById('remindmebtn');
+remindmebtn.addEventListener('click', function() {
+    
+    window.location.href = 'medreminder.html'; 
+});
+      </script>
+</body>
+</html>

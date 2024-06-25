@@ -1,0 +1,36 @@
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('sbg.jpg');
+    background-size: cover;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about-section {
+    padding: 50px 0;
+}
+
+h2, h3 {
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li::before {
+    content: "•";
+    margin-right: 8px;
+    color: #2ec8a6;
+}
+
+strong {
+    color: #2ec8a6;
+}

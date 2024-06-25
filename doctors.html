@@ -1,0 +1,100 @@
+doctors html: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors</title>
+    <link rel="stylesheet" href="styles6.css">
+</head>
+<body>
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for a doctor...">
+            <button onclick="searchDoctors()">Search</button>
+        </div>
+        <div class="doctors">
+            <div class="doctor">
+                <div class="doctor-info">
+                    <img src="https://hips.hearstapps.com/hmg-prod/images/portrait-of-a-happy-young-doctor-in-his-clinic-royalty-free-image-1661432441.jpg?crop=0.66698xw:1xh;center,top&resize=1200:*" alt="Doctor Image">
+                    <div class="description">
+                        <h2>Dr. John Doe</h2>
+                        <p>Working experience: 5+ years</p>
+                        <p>Qualities: Logical, rational, focused</p>
+                    </div>
+                </div>
+                <div class="actions">
+                 
+                    <button onclick="displayPhoneNumber(0)">Contact Now</button>
+                    <button onclick="setPriority(this)">Set as Priority</button>
+                    <span class="phone-number"></span>
+                </div>
+                <p class="priority-line" style="display: none;">Priority assigned. We'll keep you updated.</p>
+            </div>
+            <div class="doctor">
+                <div class="doctor-info">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR541fW0IbTI-1pa2wd1zrjXiN4rOvBtPDC4d7aOrhPdA&s" alt="Doctor Image">
+                    <div class="description">
+                        <h2>Dr. Jane Smith</h2>
+                        <p>Working experience: 4+ years</p>
+                        <p>Qualities: Comfort provider, diligent, honest</p>
+                    </div>
+                </div>
+                <div class="actions">
+                 
+                    <button onclick="displayPhoneNumber(1)">Contact Now</button>
+                    <button onclick="setPriority(this)">Set as Priority</button>
+                    <span class="phone-number"></span>
+                </div>
+                <p class="priority-line" style="display: none;">Priority assigned. We'll keep you updated.</p>
+            </div>
+            <div class="doctor">
+                <div class="doctor-info">
+                    <img src="https://www.felixhospital.com/sites/default/files/2022-11/dr-dk-gupta.jpg" alt="doctor image">
+                    <div class="description">
+                        <h2>Dr. Dinesh Gupta</h2>
+                        <p>Working experience: 10+ years</p>
+                        <p>Qualities: Highly experienced, swift, rational</p>
+                    </div>
+                </div>
+                <div class="actions">
+                   
+                    <button onclick="displayPhoneNumber(2)">Contact Now</button>
+                    <button onclick="setPriority(this)">Set as Priority</button>
+                    <span class="phone-number"></span>
+                </div>
+                <p class="priority-line" style="display: none;">Priority assigned. We'll keep you updated.</p>
+            </div>
+            <div class="doctor">
+                <div class="doctor-info">
+                    <img src="https://media.npr.org/assets/img/2021/05/20/harihar_vert-0cbe6e9756e62e28bc77d7e61774e17d1455c9e1-s1100-c50.jpg" alt="doctor image">
+                    <div class="description">
+                        <h2>Dr. Vineeta Singh</h2>
+                        <p>Working experience: 3+ years</p>
+                        <p>Qualities: Understanding, patient, wise</p>
+                    </div>
+                </div>
+                <div class="actions">
+     
+                    <button onclick="displayPhoneNumber(3)">Contact Now</button>
+                    <button onclick="setPriority(this)">Set as Priority</button>
+                    <span class="phone-number"></span>
+                </div>
+                <p class="priority-line" style="display: none;">Priority assigned. We'll keep you updated.</p>
+            </div>
+        </div>
+        <p id="noResults" style="display: none;">No matching results found.</p>
+    </div>
+      <div class="referral">
+        <input type="text" id="referralInput" placeholder="Enter doctor's referral..." oninput="showSuggestions(this.value)">
+        <ul id="suggestions" style="display: none;"></ul>
+        <button type="submit" onclick="submitReferral()">Submit</button>
+    </div>
+<div class="phone-popup" id="phonePopup">
+        <div class="phone-popup-content">
+            <span class="close" onclick="closePhonePopup()">&times;</span>
+            <p id="phoneNumber"></p>
+        </div>
+    </div>
+    <script src="script7.js"></script>
+</body>
+</html>

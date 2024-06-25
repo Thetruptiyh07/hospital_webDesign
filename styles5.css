@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    max-width: 100px; /* Adjust as needed */
+    margin-right: 20px;
+margin-left: 90px; /* Reduce space between logo and text */
+}
+
+.quote {
+    width: 200px;
+    text-align: left;
+}
+
+.quote h1 {
+    font-size: 54px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.section-links {
+    margin-top: 50px;
+    text-align: center; /* Center-align the section links */
+}
+
+.section-links a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+    border: 2px solid #333;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.section-links a:hover {
+    background-color: #333;
+    color: #fff;
+}
